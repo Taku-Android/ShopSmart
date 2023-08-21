@@ -20,7 +20,7 @@ class ThemeCubit extends Cubit<ThemeState> {
   }
 
   Future<void> getThemeValue()async{
-    _isDarkTheme = await Helper.getUserThemeData(saveKey: kThemeKey)?? false;
+    _isDarkTheme = await Helper.getUserThemeData(saveKey: kThemeKey) ?? false;
     emit(ThemeRetrieve());
 
   }
