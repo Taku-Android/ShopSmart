@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../../../../core/utils/theme_cubit/theme_cubit.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,11 +13,18 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Home')
+          SwitchListTile(
+              value: BlocProvider.of<ThemeCubit>(context)
+                  .getIsDarkTheme,
+              onChanged: (value) {
+
+                BlocProvider.of<ThemeCubit>(context)
+                    .setThemeValue(themeValue: value);
+              })
         ],
       ),
     );

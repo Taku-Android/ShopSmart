@@ -9,6 +9,10 @@ class AppThemes {
         scaffoldBackgroundColor: AppColor.darkScaffoldBackground,
         cardColor: AppColor.darkCardColor,
         brightness: Brightness.dark,
+        appBarTheme: const AppBarTheme(
+          elevation: 0 ,
+          backgroundColor: AppColor.darkScaffoldBackground
+        ),
         navigationBarTheme: NavigationBarThemeData(
             elevation: 0,
             backgroundColor: AppColor.darkScaffoldBackground,
@@ -33,9 +37,13 @@ class AppThemes {
         cardColor: AppColor.lightScaffoldBackground,
         // to change the text color
         brightness: Brightness.light,
+        appBarTheme: const AppBarTheme(
+            elevation: 0 ,
+            backgroundColor: AppColor.lightScaffoldBackground
+        ),
         navigationBarTheme: NavigationBarThemeData(
             elevation: 0,
-            backgroundColor: AppColor.lightPrimary,
+            backgroundColor: AppColor.lightScaffoldBackground,
             labelTextStyle: MaterialStateProperty.resolveWith<TextStyle?>(
                 (Set<MaterialState> states) {
               if (states.contains(MaterialState.selected)) {
