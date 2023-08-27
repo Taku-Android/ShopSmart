@@ -4,12 +4,13 @@ import 'package:shop_smart/core/utils/styles.dart';
 
 class GeneralCustomList extends StatelessWidget {
   const GeneralCustomList({
-    super.key, required this.title, required this.image, required this.onTap,
+    super.key, required this.title, required this.image, required this.onTap, required this.onIconTap,
   });
 
   final String title ;
   final String image ;
   final void Function()? onTap ;
+  final void Function()? onIconTap ;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,7 @@ class GeneralCustomList extends StatelessWidget {
           fontWeight: FontWeight.w500
       ),),
       trailing: IconButton(
-        onPressed: (){},
+        onPressed: onIconTap,
         icon:  const Icon(IconlyLight.arrowRight2, color: Colors.grey,),
       ),
     );
