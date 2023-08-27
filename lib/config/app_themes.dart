@@ -10,8 +10,14 @@ class AppThemes {
         cardColor: AppColor.darkCardColor,
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
-          elevation: 0 ,
-          backgroundColor: AppColor.darkScaffoldBackground
+          elevation: 0,
+          backgroundColor: AppColor.darkScaffoldBackground,
+          iconTheme: IconThemeData(color: Colors.white),
+          toolbarTextStyle: TextStyle(
+            color: Colors.white, // Set the text color for light theme
+            fontSize: 22, // Set the font size
+            fontWeight: FontWeight.bold, // Set the font weight
+          ),
         ),
         navigationBarTheme: NavigationBarThemeData(
             elevation: 0,
@@ -38,8 +44,14 @@ class AppThemes {
         // to change the text color
         brightness: Brightness.light,
         appBarTheme: const AppBarTheme(
-            elevation: 0 ,
-            backgroundColor: AppColor.lightScaffoldBackground
+          elevation: 0,
+          backgroundColor: AppColor.lightScaffoldBackground,
+          iconTheme: IconThemeData(color: Colors.black),
+          toolbarTextStyle: TextStyle(
+            color: Colors.black, // Set the text color for light theme
+            fontSize: 22, // Set the font size
+            fontWeight: FontWeight.bold, // Set the font weight
+          ),
         ),
         navigationBarTheme: NavigationBarThemeData(
             elevation: 0,
