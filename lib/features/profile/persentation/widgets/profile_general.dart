@@ -8,29 +8,32 @@ class ProfileGeneral extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'General',
-          style: Styles.text18,
-        ),
-        const SizedBox(
-          height: 12,
-        ),
-        GeneralCustomList(title: 'All Order', image: ImagePath.order_svg, onTap: (){
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'General',
+            style: Styles.text18,
+          ),
+          const SizedBox(
+            height: 12,
+          ),
+          GeneralCustomList(title: 'All Order', image: ImagePath.order_svg, onTap: (){
 
-        },),
-        GeneralCustomList(title: 'Wishlist', image: ImagePath.wishlist_svg, onTap: (){
+          },),
+          GeneralCustomList(title: 'Wishlist', image: ImagePath.wishlist_svg, onTap: (){
 
-        },),
-        GeneralCustomList(title: 'Viewed recently', image: ImagePath.recent, onTap: (){
+          },),
+          GeneralCustomList(title: 'Viewed recently', image: ImagePath.recent, onTap: (){
 
-        },),
-        GeneralCustomList(title: 'Address', image: ImagePath.address, onTap: (){
+          },),
+          GeneralCustomList(title: 'Address', image: ImagePath.address, onTap: (){
 
-        },),
-      ],
+          },),
+        ],
+      ),
     );
   }
 }
