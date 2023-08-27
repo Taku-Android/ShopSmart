@@ -1,13 +1,11 @@
 import 'package:go_router/go_router.dart';
+import 'package:shop_smart/features/profile/persentation/screens/wishlist_screen.dart';
 import 'package:shop_smart/features/root/persentation/screens/root_navigation_screen.dart';
-import '../features/home/persentation/screens/home_screen.dart';
 
 abstract class AppRoutes {
   static const kRootScreen = '/';
-  static const kHomeScreen = '/home';
-  static const kCartScreen = '/cart';
-  static const kSearchScreen = '/search';
-  static const kProfileScreen = '/profile';
+  static const kWishScreen = '/WishList';
+
 
   static final router = GoRouter(routes: [
 
@@ -18,9 +16,9 @@ abstract class AppRoutes {
       },
     ),
     GoRoute(
-      path: kHomeScreen,
+      path: kWishScreen,
       builder: (context, GoRouterState state) {
-        return const HomeScreen();
+        return const WishlistScreen();
       },
     ),
 
