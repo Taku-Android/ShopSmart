@@ -15,7 +15,7 @@ class ProfileOthers extends StatelessWidget {
         children: [
           Text('Others' , style: Styles.text18,),
           GeneralCustomList(title: 'Privacy & Policy', image: ImagePath.privacy,
-              onTap: (){}) ,
+              onTap: (){}, onIconTap: () {  },) ,
           Center(
             child: ElevatedButton.icon(
               style: ButtonStyle(
