@@ -38,6 +38,7 @@ dependencies:
   go_router: ^9.0.3
   cached_network_image: ^3.2.3
   flutter_iconly: ^1.0.2
+  shimmer: ^3.0.0
 
 
 dev_dependencies:

@@ -1,5 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
+import 'package:shop_smart/core/utils/styles.dart';
 
 class CustomAppbar extends StatelessWidget {
   const CustomAppbar({super.key});
@@ -17,8 +19,23 @@ class CustomAppbar extends StatelessWidget {
             width: 50,height: 50,
             ),
             const SizedBox(width: 20,),
-            const Text('ShopSmart'),
-
+        // SizedBox(
+        //   child: Shimmer.fromColors(
+        //   period: const Duration(seconds: 2),
+        //     baseColor: Colors.purple,
+        //     highlightColor: Colors.red,
+        //     child:  Text(
+        //       'ShopSmart',
+        //       textAlign: TextAlign.center,
+        //       style: Styles.subTitleText,
+        //     ),
+        //   ),
+        // ),
+        Text(
+                'ShopSmart',
+                textAlign: TextAlign.center,
+                style: Styles.subTitleText,
+              ),
           ],
         ),
       ),
