@@ -33,11 +33,13 @@ class _RootNavigationScreenState extends State<RootNavigationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
         children: screens,
 
       ),
       bottomNavigationBar: NavigationBar(
+
         onDestinationSelected: (index) {
           setState(() {
             currentScreen = index;

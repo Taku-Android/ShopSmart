@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_appbar.dart';
 import 'package:shop_smart/features/profile/persentation/widgets/profile_general.dart';
+import 'package:shop_smart/features/profile/persentation/widgets/profile_settings.dart';
 import 'package:shop_smart/features/profile/persentation/widgets/profile_user_info.dart';
 
 class ProfileBody extends StatelessWidget {
@@ -13,10 +14,23 @@ class ProfileBody extends StatelessWidget {
         CustomAppbar(),
         ProfileUserInfo(userLoggedIn: false),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.0 , vertical: 16),
+          padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 16),
           child: ProfileGeneral(),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          child: Divider(
+            thickness: 1,
+            color: Colors.grey,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0 , vertical: 16),
+          child: ProfileSettings(),
         ),
       ],
     );
   }
 }
+
+
