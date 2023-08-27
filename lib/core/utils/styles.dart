@@ -12,6 +12,11 @@ class Styles {
       fontWeight: FontWeight.w600
   );
 
+  static  TextStyle? headerText = const TextStyle(
+      fontSize: 36 ,
+      fontWeight: FontWeight.w900
+  );
+
   static  TextStyle? titleText = const TextStyle(
       fontSize: 20 ,
       fontWeight: FontWeight.w900
