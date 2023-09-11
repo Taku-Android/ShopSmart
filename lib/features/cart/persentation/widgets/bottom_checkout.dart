@@ -10,8 +10,13 @@ class BottomCheckout extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size ;
     return Container(
-      color: Theme.of(context).scaffoldBackgroundColor,
       height: size.height / 12  ,
+      decoration: BoxDecoration(
+        color: Theme.of(context).scaffoldBackgroundColor,
+        border: const Border(
+          top: BorderSide(width: 0.3 , color: Colors.grey)
+        )
+      ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
