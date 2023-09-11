@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_appbar.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_empty_list.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
-import 'package:shop_smart/features/cart/persentation/widgets/bottom_checkout.dart';
 import 'package:shop_smart/features/cart/persentation/widgets/custom_list_item.dart';
 
 class CartBody extends StatelessWidget {
@@ -12,23 +11,36 @@ class CartBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomAppbar(
-          title: 'Shopping basket',
-          needIcon: !isEmpty,
-        ),
-        (isEmpty)
-            ? CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart')
-            : const CustomListItem(),
-       const Spacer(),
-       const Divider(
-         height: 2,
-         color: Colors.grey,
-       ),
-       const SizedBox(height: 8,),
-       const BottomCheckout()
-      ],
+    Size size = MediaQuery.of(context).size ;
+
+    return Padding(
+      padding:  EdgeInsets.only(bottom: size.height / 12 ),
+      child: Column(
+        children: [
+          CustomAppbar(
+            title: 'Shopping basket',
+            needIcon: !isEmpty,
+          ),
+          (isEmpty)
+              ?  CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart')
+              : const Expanded(child: CartListView()),
+
+        ],
+      ),
     );
   }
 }
+class CartListView extends StatelessWidget {
+  const CartListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 20,
+      itemBuilder: (context , index){
+      return CustomListItem();
+    },
+    );
+  }
+}
+
