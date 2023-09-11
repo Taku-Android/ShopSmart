@@ -7,33 +7,33 @@ class Styles {
     fontSize: 16 ,
     fontWeight: FontWeight.w600
   );
-  static  TextStyle? textBottomNavigationNotSelected = const TextStyle(
+  static  TextStyle textBottomNavigationNotSelected = const TextStyle(
       fontSize: 16 ,
       fontWeight: FontWeight.w600
   );
 
-  static  TextStyle? headerText = const TextStyle(
+  static  TextStyle headerText = const TextStyle(
       fontSize: 36 ,
       fontWeight: FontWeight.w900
   );
 
-  static  TextStyle? titleText = const TextStyle(
+  static  TextStyle titleText = const TextStyle(
       fontSize: 20 ,
       fontWeight: FontWeight.w900
   );
 
-  static  TextStyle? subTitleText = const TextStyle(
+  static  TextStyle subTitleText = const TextStyle(
       fontSize: 16 ,
       color: Colors.grey,
       fontWeight: FontWeight.w900
   );
 
-  static  TextStyle? text16 = const TextStyle(
+  static  TextStyle text16 = const TextStyle(
       fontSize: 16 ,
       fontWeight: FontWeight.w900
   );
 
-  static  TextStyle? text18 = const TextStyle(
+  static  TextStyle text18 = const TextStyle(
       fontSize: 18 ,
       fontWeight: FontWeight.w900
   );
