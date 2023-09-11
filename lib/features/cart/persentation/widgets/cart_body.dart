@@ -1,0 +1,24 @@
+import 'package:flutter/material.dart';
+import 'package:shop_smart/core/utils/global_widgets/custom_empty_list.dart';
+import 'package:shop_smart/core/utils/image_path.dart';
+import 'package:shop_smart/features/cart/persentation/widgets/custom_list_item.dart';
+
+class CartBody extends StatelessWidget {
+  const CartBody({super.key, required this.isEmpty});
+
+  final bool isEmpty ;
+
+  @override
+  Widget build(BuildContext context) {
+    return  Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        (isEmpty)?
+    CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart'):
+    const CustomListItem(),
+      ],
+    );
+
+  }
+}
+
