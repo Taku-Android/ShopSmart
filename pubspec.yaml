@@ -39,6 +39,7 @@ dependencies:
   cached_network_image: ^3.2.3
   flutter_iconly: ^1.0.2
   shimmer: ^3.0.0
+  fancy_shimmer_image: ^2.0.3
 
 
 dev_dependencies:

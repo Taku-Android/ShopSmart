@@ -7,22 +7,20 @@ import 'package:shop_smart/features/cart/persentation/widgets/custom_list_item.d
 class CartBody extends StatelessWidget {
   const CartBody({super.key, required this.isEmpty});
 
-  final bool isEmpty ;
+  final bool isEmpty;
 
   @override
   Widget build(BuildContext context) {
-    return  Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-          CustomAppbar(title: 'Shopping basket', needIcon: !isEmpty,),
-
-
-        (isEmpty)?
-    CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart'):
-    const CustomListItem(),
+        CustomAppbar(
+          title: 'Shopping basket',
+          needIcon: !isEmpty,
+        ),
+        (isEmpty)
+            ? CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart')
+            : const CustomListItem(),
       ],
     );
-
   }
 }
-

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
 import 'package:shop_smart/core/utils/styles.dart';
 
@@ -46,7 +44,7 @@ class CustomAppbar extends StatelessWidget {
             ),
             const Spacer(),
             (needIcon) ?
-                IconButton(onPressed: (){}, icon: const Icon(IconlyBold.delete)) :
+                IconButton(onPressed: (){}, icon: const Icon(Icons.delete_forever)) :
                 const SizedBox.shrink(),
 
 

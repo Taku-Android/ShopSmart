@@ -12,7 +12,7 @@ class _CartScreenState extends State<CartScreen> {
   @override
   Widget build(BuildContext context) {
     return  const Scaffold(
-      body: CartBody(isEmpty: true)
+      body: SafeArea(child: CartBody(isEmpty: false))
     );
   }
 }
