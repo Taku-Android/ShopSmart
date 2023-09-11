@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_smart/core/utils/global_widgets/custom_appbar.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_empty_list.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
 import 'package:shop_smart/features/cart/persentation/widgets/custom_list_item.dart';
@@ -13,6 +14,9 @@ class CartBody extends StatelessWidget {
     return  Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+          CustomAppbar(title: 'Shopping basket', needIcon: !isEmpty,),
+
+
         (isEmpty)?
     CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart'):
     const CustomListItem(),
