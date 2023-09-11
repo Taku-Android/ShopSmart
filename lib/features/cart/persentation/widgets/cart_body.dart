@@ -38,7 +38,7 @@ class CartListView extends StatelessWidget {
     return ListView.builder(
       itemCount: 20,
       itemBuilder: (context , index){
-      return CustomListItem();
+      return const CustomListItem();
     },
     );
   }

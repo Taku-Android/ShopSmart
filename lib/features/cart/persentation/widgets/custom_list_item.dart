@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/core/utils/styles.dart';
+import 'package:shop_smart/features/cart/persentation/widgets/quantity_bottom_sheet.dart';
 
 class CustomListItem extends StatefulWidget {
   const CustomListItem({super.key});
@@ -89,7 +90,9 @@ class _CustomListItemState extends State<CustomListItem> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     side: const BorderSide(width: 1 , color: Colors.blue)
                 ),
-                onPressed: () {},
+                onPressed: () {
+                    showCustomBottomSheet();
+                },
                 icon: const Icon(IconlyLight.arrowDown2),
                 label: const Text('Qty: 6'),
               ),
@@ -99,4 +102,15 @@ class _CustomListItemState extends State<CustomListItem> {
       ),
     );
   }
+
+  void showCustomBottomSheet() {
+    showModalBottomSheet(
+        backgroundColor: Colors.transparent,
+        context: context , builder: (_){
+
+      return const QuantityBottomSheet();
+    });
+
+  }
+
 }
