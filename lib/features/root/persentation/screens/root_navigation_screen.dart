@@ -49,7 +49,7 @@ class _RootNavigationScreenState extends State<RootNavigationScreen> {
 
         },
         selectedIndex: currentScreen,
-        destinations: const [
+        destinations:  const [
           NavigationDestination(
             selectedIcon: Icon(IconlyBold.home),
               icon: Icon(IconlyLight.home),
@@ -61,7 +61,12 @@ class _RootNavigationScreenState extends State<RootNavigationScreen> {
           NavigationDestination(
               selectedIcon: Icon(IconlyBold.bag2),
 
-              icon: Icon(IconlyLight.bag2), label: 'Cart'),
+              icon: Badge(
+                  label: Center(child: Text('6' , style: TextStyle(
+                    fontSize: 14 ,
+                    color: Colors.grey
+                  ),)),
+                  child: Icon(IconlyLight.bag2)), label: 'Cart'),
           NavigationDestination(
               selectedIcon: Icon(IconlyBold.profile),
 
