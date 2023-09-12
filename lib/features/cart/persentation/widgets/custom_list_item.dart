@@ -79,10 +79,10 @@ class _CustomListItemState extends State<CustomListItem> {
                   },
                   child: (fav)
                       ? const Icon(
-                          Icons.favorite,
+                    IconlyBold.heart,
                           color: Colors.red,
                         )
-                      : const Icon(Icons.favorite_border)),
+                      : const Icon(IconlyLight.heart)),
               const Spacer(),
               OutlinedButton.icon(
 
