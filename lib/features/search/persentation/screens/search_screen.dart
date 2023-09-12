@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/search_body.dart';
+
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
 
@@ -10,13 +12,15 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text('Search')
-        ],
-      ),
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+      },
+      child: const Scaffold(body: SafeArea(child: SearchBody())),
     );
   }
 }
+
+
+
+
