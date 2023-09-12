@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_appbar.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_empty_list.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
-import 'package:shop_smart/features/cart/persentation/widgets/custom_list_item.dart';
+import 'package:shop_smart/features/cart/persentation/widgets/cart_list_view.dart';
 
 class CartBody extends StatelessWidget {
   const CartBody({super.key, required this.isEmpty});
@@ -30,17 +30,5 @@ class CartBody extends StatelessWidget {
     );
   }
 }
-class CartListView extends StatelessWidget {
-  const CartListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 20,
-      itemBuilder: (context , index){
-      return const CustomListItem();
-    },
-    );
-  }
-}
 
