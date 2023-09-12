@@ -62,9 +62,9 @@ class _RootNavigationScreenState extends State<RootNavigationScreen> {
               selectedIcon: Icon(IconlyBold.bag2),
 
               icon: Badge(
+                backgroundColor: Colors.blue,
                   label: Center(child: Text('6' , style: TextStyle(
                     fontSize: 14 ,
-                    color: Colors.grey
                   ),)),
                   child: Icon(IconlyLight.bag2)), label: 'Cart'),
           NavigationDestination(
