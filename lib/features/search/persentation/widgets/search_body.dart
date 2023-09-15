@@ -36,24 +36,18 @@ class _SearchBodyState extends State<SearchBody> {
           child: SearchTextField(
               searchController: searchController,
               onClearTap: () {
-                setState(() {
-                  searchController.clear();
-                });
+                FocusScope.of(context).unfocus();
+                searchController.clear();
               },
-              onChanged: (text) {
-              },
-              onSubmit: (text) {
-              }),
+              onChanged: (text) {},
+              onSubmit: (text) {}),
         ),
-        const Expanded(child: Padding(
-          padding: EdgeInsets.all(12.0),
-          child: SearchItemsGridList(),
+        const Expanded(
+            child: Padding(
+              padding: EdgeInsets.all(12.0),
+              child: SearchItemsGridList(),
         ))
       ],
     );
   }
 }
-
-
-
-
