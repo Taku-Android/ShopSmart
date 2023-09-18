@@ -5,7 +5,9 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import '../../../../core/utils/styles.dart';
 
 class ProductItem extends StatefulWidget {
-  const ProductItem({super.key});
+  const ProductItem({super.key, required this.height});
+
+  final int height ;
 
   @override
   State<ProductItem> createState() => _ProductItemState();
@@ -26,7 +28,7 @@ class _ProductItemState extends State<ProductItem> {
             child: FancyShimmerImage(
               imageUrl: 'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png',
               width: size.width  ,
-              height: size.height / 4,
+              height: size.height / widget.height,
               boxFit: BoxFit.fill,
             ),
           ),

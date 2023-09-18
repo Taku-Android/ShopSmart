@@ -9,7 +9,7 @@ class SearchItemsGridList extends StatelessWidget {
   Widget build(BuildContext context) {
     return DynamicHeightGridView(
         builder: (context, index) {
-          return const ProductItem();
+          return const ProductItem(height: 4,);
         },
         itemCount: 20,
         crossAxisCount: 2);
