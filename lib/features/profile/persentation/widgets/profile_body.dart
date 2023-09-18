@@ -15,6 +15,7 @@ class ProfileBody extends StatelessWidget {
         CustomAppbar(title: 'ShopSmart', needIcon: false,),
         Expanded(
           child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
             child: Column(
               children: [
                 ProfileUserInfo(userLoggedIn: false),

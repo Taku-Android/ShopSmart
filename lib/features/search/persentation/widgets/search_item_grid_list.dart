@@ -8,6 +8,7 @@ class SearchItemsGridList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DynamicHeightGridView(
+      physics: const BouncingScrollPhysics(),
         builder: (context, index) {
           return const ProductItem(height: 4,);
         },

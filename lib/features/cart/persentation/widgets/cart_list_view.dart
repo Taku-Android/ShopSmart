@@ -7,6 +7,7 @@ class CartListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: 20,
       itemBuilder: (context , index){
         return const CustomListItem();

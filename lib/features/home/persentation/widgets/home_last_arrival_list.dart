@@ -8,6 +8,7 @@ class HomeLastArrivalList extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: 6,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context , index){
