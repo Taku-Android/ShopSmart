@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_appbar.dart';
 import 'package:shop_smart/features/home/persentation/widgets/home_image_swiper.dart';
-
+import 'home_categories.dart';
 import 'home_last_arrival.dart';
 
 class HomeBody extends StatelessWidget {
@@ -9,18 +9,42 @@ class HomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    Size size = MediaQuery.of(context).size;
+    return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        CustomAppbar(title: 'ShopSmart', needIcon: false),
-        SizedBox(height: 20,),
-        HomeImageSwiper(),
-        Expanded(child: HomeLastArrival()),
+        const CustomAppbar(title: 'ShopSmart', needIcon: false),
+        const SizedBox(height: 10,),
+        Expanded(
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                const HomeImageSwiper(),
+                SizedBox(
+                    height: size.height / 2.6,
+                    child: const HomeLastArrival()),
+                SizedBox(
+                    height: size.height / 3.6,
+                    child: const HomeCategories())
+
+              ],
+            ),
+          ),
+        ),
+
+
+
 
       ],
     );
   }
 }
+
+
+
+
+
 
 
 
