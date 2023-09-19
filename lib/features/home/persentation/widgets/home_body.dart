@@ -13,7 +13,7 @@ class HomeBody extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CustomAppbar(title: 'ShopSmart', needIcon: false),
+        const CustomAppbar(title: 'ShopSmart', needIcon: false , goBack: false,),
         const SizedBox(height: 10,),
         Expanded(
           child: SingleChildScrollView(

@@ -12,7 +12,7 @@ class ProfileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        CustomAppbar(title: 'ShopSmart', needIcon: false,),
+        CustomAppbar(title: 'ShopSmart', needIcon: false, goBack: false,),
         Expanded(
           child: SingleChildScrollView(
             physics: BouncingScrollPhysics(),

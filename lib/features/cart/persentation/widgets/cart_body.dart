@@ -20,6 +20,7 @@ class CartBody extends StatelessWidget {
           CustomAppbar(
             title: 'Shopping basket',
             needIcon: !isEmpty,
+            goBack: false,
           ),
           (isEmpty)
               ?  CustomEmptyList(image: ImagePath.shopping_cart, page: 'cart')

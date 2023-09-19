@@ -30,7 +30,7 @@ class _SearchBodyState extends State<SearchBody> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const CustomAppbar(title: 'Store Product', needIcon: false),
+        const CustomAppbar(title: 'Store Product', needIcon: false , goBack: false,),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
           child: SearchTextField(
