@@ -24,7 +24,7 @@ class _HomeImageSwiperState extends State<HomeImageSwiper> {
       padding: const EdgeInsets.symmetric(horizontal: 8.0 , vertical: 4),
       child: SizedBox(
         width: double.infinity,
-        height: size.height / 5,
+        height: size.height / 4.5,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: Swiper(
