@@ -9,6 +9,9 @@ class AppThemes {
         scaffoldBackgroundColor: AppColor.darkScaffoldBackground,
         cardColor: AppColor.darkCardColor,
         brightness: Brightness.dark,
+        iconTheme: const IconThemeData(
+          color: Colors.white
+        ),
         appBarTheme: const AppBarTheme(
           elevation: 0,
           backgroundColor: AppColor.darkScaffoldBackground,
@@ -43,6 +46,9 @@ class AppThemes {
         cardColor: AppColor.lightScaffoldBackground,
         // to change the text color
         brightness: Brightness.light,
+        iconTheme: const IconThemeData(
+            color: Colors.black
+        ),
         appBarTheme: const AppBarTheme(
           elevation: 0,
           backgroundColor: AppColor.lightScaffoldBackground,

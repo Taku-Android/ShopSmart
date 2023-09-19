@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/core/utils/styles.dart';
+
+import '../../../../core/utils/theme_cubit/theme_cubit.dart';
 
 class AddingToCartAndFavProductDetail extends StatefulWidget {
   const AddingToCartAndFavProductDetail({super.key});
@@ -18,6 +21,7 @@ class _AddingToCartAndFavProductDetailState
 
   @override
   Widget build(BuildContext context) {
+    bool isDark = BlocProvider.of<ThemeCubit>(context).getIsDarkTheme;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -58,7 +62,7 @@ class _AddingToCartAndFavProductDetailState
                 child: ElevatedButton.icon(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.blue[300]!), // Set the background color to red
+                        (isDark)?Colors.blue:Colors.blue[50]!), // Set the background color to red
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
@@ -78,14 +82,18 @@ class _AddingToCartAndFavProductDetailState
                   icon: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: (itemAdded)
-                        ? const Icon(Icons.shopping_cart)
-                        : const Icon(IconlyLight.bag),
+                        ?  Icon(Icons.shopping_cart , color: (isDark)?Colors.white:Colors.black,)
+                        :  Icon(IconlyLight.bag , color: (isDark)?Colors.white:Colors.black,),
                   ),
                   label: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 16.0),
                     child: (itemAdded)
-                        ? const Text('Item added to cart')
-                        : const Text('Add item to cart'),
+                        ?  Text('Item added to cart' , style: Styles.text16.copyWith(
+                      color: (isDark)?Colors.white:Colors.black
+                    ),)
+                        : Text('Add item to cart', style: Styles.text16.copyWith(
+                        color: (isDark)?Colors.white:Colors.black
+                    )),
                   ),
                 ),
               )

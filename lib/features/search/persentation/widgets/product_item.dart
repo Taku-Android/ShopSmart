@@ -1,7 +1,9 @@
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/config/app_routes.dart';
+import 'package:shop_smart/core/utils/theme_cubit/theme_cubit.dart';
 
 import '../../../../core/utils/styles.dart';
 
@@ -17,8 +19,11 @@ class ProductItem extends StatefulWidget {
 class _ProductItemState extends State<ProductItem> {
   bool fav = false;
 
+
+
   @override
   Widget build(BuildContext context) {
+    bool isDark = BlocProvider.of<ThemeCubit>(context).getIsDarkTheme;
     Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: (){
@@ -93,7 +98,7 @@ class _ProductItemState extends State<ProductItem> {
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
-                          color: Colors.blue ,
+                          color: (isDark)?Colors.blue : Colors.blue[50] ,
                           borderRadius: BorderRadius.circular(15)
                       ),
                       child:const Icon(Icons.add_shopping_cart , size: 20,),

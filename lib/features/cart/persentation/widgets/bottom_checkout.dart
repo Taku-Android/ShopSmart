@@ -34,7 +34,7 @@ class BottomCheckout extends StatelessWidget {
                 Text(
                   '\$14000',
                   style: Styles.subTitleText.copyWith(
-                    color: Colors.lightBlueAccent
+                    color: Colors.blue
                   ),
                 ),
               ],
