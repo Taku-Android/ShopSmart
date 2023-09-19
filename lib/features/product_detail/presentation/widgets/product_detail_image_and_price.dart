@@ -23,7 +23,7 @@ class ProductDetailImageAndPrice extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0 , vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0 , vertical: 8),
 
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

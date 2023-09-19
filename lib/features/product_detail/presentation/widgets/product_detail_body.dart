@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_appbar.dart';
 import 'package:shop_smart/features/product_detail/presentation/widgets/product_detail_image_and_price.dart';
 
+import 'adding_to_cart_and_fav_product_detail.dart';
+
 class ProductDetailBody extends StatelessWidget {
   const ProductDetailBody({super.key});
 
@@ -14,11 +16,14 @@ class ProductDetailBody extends StatelessWidget {
             needIcon: false,
             goBack: true) ,
         ProductDetailImageAndPrice(),
+        AddingToCartAndFavProductDetail(),
 
       ],
     );
   }
 }
+
+
 
 
 
