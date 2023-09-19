@@ -59,7 +59,7 @@ class CustomAppbar extends StatelessWidget {
             const Spacer(),
             (needIcon)
                 ? IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.delete_forever))
+                    onPressed: () {}, icon: const Icon(Icons.delete_forever , color: Colors.red,))
                 : const SizedBox.shrink(),
           ],
         ),

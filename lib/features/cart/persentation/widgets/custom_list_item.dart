@@ -63,7 +63,7 @@ class _CustomListItemState extends State<CustomListItem> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              InkWell(onTap: () {}, child: const Icon(Icons.delete_outline)),
+              InkWell(onTap: () {}, child: const Icon(Icons.delete_forever_sharp , color: Colors.red,)),
               const Spacer(),
               InkWell(
                   onTap: () {
