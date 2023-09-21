@@ -40,7 +40,7 @@ class BottomCheckout extends StatelessWidget {
               ],
             ) ,
             const Spacer(),
-            CustomButton(onPressed: (){}, title: 'Checkout')
+            CustomButton(onPressed: (){}, title: 'Checkout' , horizontalPadding: 8,)
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_smart/config/dialog_utils.dart';
 
 import '../../../../core/utils/global_widgets/custom_empty_list.dart';
 import '../../../../core/utils/global_widgets/custom_lists_appbar.dart';
@@ -31,7 +32,7 @@ class _ViewedRecentlyBodyState extends State<ViewedRecentlyBody> {
               : CustomListsAppbar(
             title: 'Viewed Recently ($count)',
             onPressed: (){
-
+                DialogUtils.showAlertDialog(context);
             },
             iconData: Icons.delete_forever_sharp,
           ),

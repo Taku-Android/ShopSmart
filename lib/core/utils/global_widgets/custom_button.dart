@@ -5,10 +5,11 @@ import 'package:shop_smart/core/utils/styles.dart';
 import '../theme_cubit/theme_cubit.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.title});
+  const CustomButton({super.key, required this.onPressed, required this.title, required this.horizontalPadding});
 
   final void Function()? onPressed;
   final String title ;
+  final double horizontalPadding ;
   @override
   Widget build(BuildContext context) {
     bool isDark = BlocProvider.of<ThemeCubit>(context).getIsDarkTheme;
@@ -23,7 +24,7 @@ class CustomButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.symmetric(horizontal: horizontalPadding , vertical: 8),
           child: Text(title , style:  Styles.subTitleText.copyWith(
       color: Colors.purple[700]
     ),),

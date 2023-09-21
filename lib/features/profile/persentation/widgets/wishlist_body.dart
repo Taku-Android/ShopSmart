@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shop_smart/core/utils/global_widgets/custom_button.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_empty_list.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_lists_appbar.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
@@ -31,23 +29,6 @@ class _WishlistBodyState extends State<WishlistBody> {
               : CustomListsAppbar(
                   title: 'WishList ($count)',
                   onPressed: (){
-                    setState(() {
-                      CupertinoAlertDialog(
-                        title: Column(
-                          children: [
-                            Image.asset(ImagePath.warning),
-                            const Text('All item in your wishlist will be removed'),
-
-                          ],
-                        ),
-                        actions: [
-                          CustomButton(onPressed: (){}, title: 'Cancel') ,
-                          CustomButton(onPressed: (){}, title: 'Ok') ,
-
-                        ],
-
-                      ) ;
-                    });
 
                   },
                   iconData: Icons.delete_forever_sharp,
