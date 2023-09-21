@@ -30,7 +30,7 @@ class ProfileGeneral extends StatelessWidget {
             AppRoutes.router.push(AppRoutes.kWishScreen);
           },),
           GeneralCustomList(title: 'Viewed recently', image: ImagePath.recent, onTap: (){
-
+            AppRoutes.router.push(AppRoutes.kViewedRecently);
           }, onIconTap: () {  },),
           GeneralCustomList(title: 'Address', image: ImagePath.address, onTap: (){
 

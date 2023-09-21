@@ -7,7 +7,7 @@ class ViewedRecently extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: ViewedRecentlyBody(),
+      body: SafeArea(child: ViewedRecentlyBody()),
     );
   }
 }

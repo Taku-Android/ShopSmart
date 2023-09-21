@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:shop_smart/core/utils/styles.dart';
 
 class CustomEmptyList extends StatelessWidget {
-  const CustomEmptyList({super.key, required this.image, required this.page});
+  const CustomEmptyList({super.key, required this.image, required this.page, this.subTitle});
 
 
   final String image ;
   final String page ;
+  final String? subTitle ;
 
   @override
   Widget build(BuildContext context) {
@@ -21,20 +22,21 @@ class CustomEmptyList extends StatelessWidget {
               child: Image.asset(image),
             ) ,
             Center(
-              child: Text('Whoops!' , style: Styles.headerText!.copyWith(
+              child: Text('Whoops!' , style: Styles.headerText.copyWith(
                 color: Colors.red ,
                 fontWeight: FontWeight.w700
               ),),
             ),
             const SizedBox(height: 20,),
             Center(
-              child: Text('Your $page is empty' , style: Styles.titleText!.copyWith(
+              child: Text((subTitle == null)?'Your $page is empty':'You didn\'t view any product yet'  , style: Styles.titleText.copyWith(
                   fontWeight: FontWeight.w700
               ),),
             ),
             const SizedBox(height: 20,),
-            Text('Looks like you have not added anything to your $page. \n '
-                'Go ahead & explore top categories' ,textAlign: TextAlign.center, style: Styles.subTitleText,),
+            (subTitle == null)?Text('Looks like you have not added anything to your $page. \n '
+                'Go ahead & explore top categories' ,textAlign: TextAlign.center, style: Styles.subTitleText,)
+            : const SizedBox.shrink(),
             const SizedBox(height: 20,),
 
             Center(
@@ -45,7 +47,7 @@ class CustomEmptyList extends StatelessWidget {
                 ),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
-                    child: Text('Shop now' , style: Styles.text18!.copyWith(
+                    child: Text('Shop now' , style: Styles.text18.copyWith(
                       fontWeight: FontWeight.w600,
                       color: Theme.of(context).primaryColor
                     ),),
