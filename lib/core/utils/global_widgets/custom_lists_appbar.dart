@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shop_smart/config/app_routes.dart';
 
 class CustomListsAppbar extends StatelessWidget {
-  const CustomListsAppbar({super.key, required this.title, required this.iconData});
+  const CustomListsAppbar({super.key, required this.title,  this.iconData,  this.onPressed});
 
   final String title ;
-  final IconData iconData;
+  final IconData? iconData;
+  final  void Function()? onPressed ;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,9 @@ class CustomListsAppbar extends StatelessWidget {
         const SizedBox(width: 16,),
         Text(title , style: Theme.of(context).appBarTheme.toolbarTextStyle,),
         const Spacer(),
-        IconButton(onPressed: (){}, icon:  Icon(iconData , size: 30 ,))
+        (iconData == null)?
+        const SizedBox.shrink():
+        IconButton(onPressed: onPressed, icon:  Icon(iconData , size: 30 ,))
       ],
     );
   }

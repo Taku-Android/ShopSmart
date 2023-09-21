@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_smart/features/search/persentation/widgets/search_item_grid_list.dart';
+import 'package:shop_smart/features/search/persentation/widgets/item_grid_list.dart';
 import 'package:shop_smart/features/search/persentation/widgets/search_text_field.dart';
 import '../../../../core/utils/global_widgets/custom_appbar.dart';
 
@@ -45,7 +45,7 @@ class _SearchBodyState extends State<SearchBody> {
         const Expanded(
             child: Padding(
               padding: EdgeInsets.all(12.0),
-              child: SearchItemsGridList(),
+              child: ItemsGridList(),
         ))
       ],
     );
