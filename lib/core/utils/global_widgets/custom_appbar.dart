@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shop_smart/config/app_routes.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
 import 'package:shop_smart/core/utils/styles.dart';
 
 class CustomAppbar extends StatelessWidget {
-  const CustomAppbar({super.key, required this.title, required this.needIcon, required this.goBack});
+  const CustomAppbar(
+      {super.key,
+      required this.title,
+      required this.needIcon,
+      required this.goBack});
 
   final String title;
-
   final bool needIcon;
   final bool goBack;
 
@@ -25,41 +29,46 @@ class CustomAppbar extends StatelessWidget {
                     onTap: () {
                       AppRoutes.router.pop();
                     },
-                    child: const Icon(Icons.arrow_back_ios_new , size: 15,))
+                    child: const Icon(
+                      Icons.arrow_back_ios_new,
+                      size: 15,
+                    ))
                 : Image.asset(
                     ImagePath.shopping_cart,
                     width: 50,
                     height: 50,
                   ),
-            (goBack)?
-            const Spacer():
-            const SizedBox(
-              width: 20,
-            ),
-            /*
+            (goBack)
+                ? const Spacer()
+                : const SizedBox(
+                    width: 20,
+                  ),
             SizedBox(
               child: Shimmer.fromColors(
-              period: const Duration(seconds: 2),
+                period: const Duration(seconds: 2),
                 baseColor: Colors.purple,
                 highlightColor: Colors.red,
-                child:  Text(
-                  'ShopSmart',
+                child: Text(
+                  title,
                   textAlign: TextAlign.center,
                   style: Styles.subTitleText,
                 ),
               ),
             ),
-             */
 
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: Styles.subTitleText,
-            ),
+            // Text(
+            //   title,
+            //   textAlign: TextAlign.center,
+            //   style: Styles.subTitleText,
+            // ),
             const Spacer(),
             (needIcon)
                 ? IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.delete_forever , color: Colors.red,))
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.delete_forever,
+                      color: Colors.red,
+                    ))
                 : const SizedBox.shrink(),
           ],
         ),
