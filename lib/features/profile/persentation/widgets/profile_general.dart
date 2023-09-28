@@ -23,18 +23,16 @@ class ProfileGeneral extends StatelessWidget {
           ),
           GeneralCustomList(title: 'All Order', image: ImagePath.order_svg, onTap: (){
 
-          }, onIconTap: () {  },),
+          }, ),
           GeneralCustomList(title: 'Wishlist', image: ImagePath.wishlist_svg, onTap: (){
             AppRoutes.router.push(AppRoutes.kWishScreen);
-          }, onIconTap: () {
-            AppRoutes.router.push(AppRoutes.kWishScreen);
-          },),
+          }, ),
           GeneralCustomList(title: 'Viewed recently', image: ImagePath.recent, onTap: (){
             AppRoutes.router.push(AppRoutes.kViewedRecently);
-          }, onIconTap: () {  },),
+          },),
           GeneralCustomList(title: 'Address', image: ImagePath.address, onTap: (){
 
-          }, onIconTap: () {  },),
+          },),
         ],
       ),
     );

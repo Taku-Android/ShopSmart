@@ -26,7 +26,7 @@ class BottomCheckout extends StatelessWidget {
               children: [
                 Text(
                   'Total (6 Products / 6 Items)',
-                  style: Styles.text18,
+                  style: Styles.text16,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -40,7 +40,7 @@ class BottomCheckout extends StatelessWidget {
               ],
             ) ,
             const Spacer(),
-            CustomButton(onPressed: (){}, title: 'Checkout' , horizontalPadding: 8, textColor: Colors.purple[700]!,)
+            CustomButton(onPressed: (){}, title: 'Checkout' , textColor: Colors.purple[700]!,)
           ],
         ),
       ),

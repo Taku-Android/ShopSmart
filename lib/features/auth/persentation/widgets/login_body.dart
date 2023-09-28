@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:shop_smart/features/auth/persentation/widgets/login_form.dart';
 
 import '../../../../core/utils/styles.dart';
@@ -14,23 +15,23 @@ class LoginBody extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Center(
-            child: Text(
-              'ShopSmart',
-              textAlign: TextAlign.center,
-              style: Styles.headerText,
-            ),
-            // child: SizedBox(
-            //   child: Shimmer.fromColors(
-            //     period: const Duration(seconds: 2),
-            //     baseColor: Colors.purple,
-            //     highlightColor: Colors.red,
-            //     child: Text(
-            //       'ShopSmart',
-            //       textAlign: TextAlign.center,
-            //       style: Styles.headerText,
-            //     ),
-            //   ),
+            // child: Text(
+            //   'ShopSmart',
+            //   textAlign: TextAlign.center,
+            //   style: Styles.headerText,
             // ),
+            child: SizedBox(
+              child: Shimmer.fromColors(
+                period: const Duration(seconds: 2),
+                baseColor: Colors.purple,
+                highlightColor: Colors.red,
+                child: Text(
+                  'ShopSmart',
+                  textAlign: TextAlign.center,
+                  style: Styles.headerText,
+                ),
+              ),
+            ),
           ),
           const SizedBox(
             height: 24,

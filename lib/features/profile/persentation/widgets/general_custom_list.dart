@@ -4,7 +4,7 @@ import 'package:shop_smart/core/utils/styles.dart';
 
 class GeneralCustomList extends StatelessWidget {
   const GeneralCustomList({
-    super.key, required this.title, required this.image, required this.onTap, required this.onIconTap,
+    super.key, required this.title, required this.image, required this.onTap,  this.onIconTap,
   });
 
   final String title ;
@@ -21,7 +21,7 @@ class GeneralCustomList extends StatelessWidget {
         width: 30,
         height: 30,
       ),
-      title: Text(title , style: Styles.text18!.copyWith(
+      title: Text(title , style: Styles.text18.copyWith(
           fontWeight: FontWeight.w500
       ),),
       trailing: IconButton(

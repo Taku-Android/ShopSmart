@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
+import 'package:shop_smart/config/app_routes.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_button.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_text_field.dart';
 import 'package:shop_smart/core/utils/styles.dart';
@@ -83,7 +84,9 @@ class _LoginFormState extends State<LoginForm> {
           Padding(
             padding: const EdgeInsets.only(top: 24.0, bottom: 16),
             child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  AppRoutes.router.pushReplacement(AppRoutes.kRootScreen);
+                },
                 title: 'Sign in',
                 borderRadius: 8,
                 verticalPadding: 12,

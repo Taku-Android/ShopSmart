@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_smart/core/utils/image_path.dart';
 import 'package:shop_smart/core/utils/styles.dart';
 
 class ProfileUserInfo extends StatelessWidget {
@@ -21,15 +22,21 @@ class ProfileUserInfo extends StatelessWidget {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Theme.of(context).cardColor,
-                        border: Border.all(
-                            color: Theme.of(context).colorScheme.background,
-                            width: 3),
-                        image: const DecorationImage(
-                            image: NetworkImage(
-                                "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"),
-                            fit: BoxFit.fill)),
+                      shape: BoxShape.circle,
+                      color: Theme.of(context).cardColor,
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.background,
+                        width: 3,
+                      ),
+                    ),
+                    child: ClipOval(
+                      child: Image.asset(
+                        ImagePath.user, // Replace with your actual image path
+                        width: 60,
+                        height: 60,
+                        fit: BoxFit.fill, // Adjust the fit as per your requirement
+                      ),
+                    ),
                   ),
                   const SizedBox(
                     width: 16,

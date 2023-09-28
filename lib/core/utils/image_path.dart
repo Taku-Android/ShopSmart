@@ -16,6 +16,9 @@ class ImagePath{
   static String successful = '$imagePath/successful.png';
   static String warning = '$imagePath/warning.png';
   static String google = '$imagePath/google.jpg';
+  static String iphone = '$imagePath/iphone.jpg';
+  static String loading = '$imagePath/loading.jpg';
+  static String user = '$imagePath/user.png';
 
   //bag path
   static String bag_wish = '$bagPath/bag_wish.png';

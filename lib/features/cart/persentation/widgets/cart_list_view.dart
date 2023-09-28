@@ -10,7 +10,10 @@ class CartListView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemCount: 20,
       itemBuilder: (context , index){
-        return const CustomListItem();
+        return const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 4.0),
+          child: CustomListItem(),
+        );
       },
     );
   }
