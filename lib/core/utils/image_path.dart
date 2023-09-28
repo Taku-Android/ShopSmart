@@ -15,6 +15,7 @@ class ImagePath{
   static String rounded_map = '$imagePath/rounded_map.png';
   static String successful = '$imagePath/successful.png';
   static String warning = '$imagePath/warning.png';
+  static String google = '$imagePath/google.jpg';
 
   //bag path
   static String bag_wish = '$bagPath/bag_wish.png';
