@@ -28,6 +28,7 @@ class _LoginFormState extends State<LoginForm> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           CustomTextField(
+            hint: 'Email',
             controller: emailController,
             onSubmit: (value) {},
             isPass: false,
@@ -41,6 +42,7 @@ class _LoginFormState extends State<LoginForm> {
             height: 16,
           ),
           CustomTextField(
+            hint: 'Password',
             controller: passController,
             onSubmit: (value) {
               if (!submit) {
@@ -82,7 +84,7 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 24.0, bottom: 16),
+            padding: const EdgeInsets.only(top: 12.0 , bottom: 24),
             child: CustomButton(
                 onPressed: () {
                   AppRoutes.router.pushReplacement(AppRoutes.kRootScreen);
