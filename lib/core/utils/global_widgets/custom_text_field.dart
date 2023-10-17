@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
         required this.icon,
         required this.isSecure,
         required this.validate,
-        required this.errMessage});
+        required this.errMessage, required this.hint});
 
   final TextEditingController controller;
 
@@ -23,6 +23,7 @@ class CustomTextField extends StatelessWidget {
   final bool validate;
 
   final String errMessage;
+  final String hint ;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class CustomTextField extends StatelessWidget {
       obscureText: isSecure,
       decoration: InputDecoration(
         filled: true,
+        hintText: hint,
         errorText: (!validate) ? errMessage : null,
         enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(width: 1, color: Colors.transparent),
