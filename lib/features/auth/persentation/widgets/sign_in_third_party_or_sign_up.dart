@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_smart/config/app_routes.dart';
 import 'package:shop_smart/core/utils/global_widgets/custom_button.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
 import 'package:shop_smart/core/utils/styles.dart';
@@ -59,14 +60,19 @@ class SignInThirdPartyOrSignUp extends StatelessWidget {
                 style: Styles.subTitleText,
               ),
               const SizedBox(width: 8,),
-              Text(
-                'Sign up',
-                style: Styles.subTitleText.copyWith(
-                    fontSize: 20 ,
-                    fontWeight: FontWeight.w700 ,
-                    decoration: TextDecoration.underline ,
-                    color: Colors.purple[700]
+              GestureDetector(
+                onTap: (){
+                  AppRoutes.router.push(AppRoutes.kRegisterScreen);
+                },
+                child: Text(
+                  'Sign up',
+                  style: Styles.subTitleText.copyWith(
+                      fontSize: 20 ,
+                      fontWeight: FontWeight.w700 ,
+                      decoration: TextDecoration.underline ,
+                      color: Colors.purple[700]
 
+                  ),
                 ),
               ),
             ],
