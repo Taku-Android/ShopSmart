@@ -20,18 +20,13 @@ class _CustomListItemState extends State<CustomListItem> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: double.infinity,
+      width: size.width ,
       height: size.height / 5,
-      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 6),
       child: Row(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            // child: FancyShimmerImage(
-            //   imageUrl: 'https://i.ibb.co/8r1Ny2n/20-Nike-Air-Force-1-07.png',
-            //   width: 100,
-            //   boxFit: BoxFit.fill,
-            // ),
             child: CachedNetworkImage(
               width: 100,
               fit: BoxFit.fill,
@@ -43,8 +38,8 @@ class _CustomListItemState extends State<CustomListItem> {
             ),
           ),
           Container(
-            width: size.width / 2.5,
-            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+            width: size.width / 2.6,
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,

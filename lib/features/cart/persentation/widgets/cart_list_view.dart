@@ -8,12 +8,9 @@ class CartListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       physics: const BouncingScrollPhysics(),
-      itemCount: 20,
+      itemCount: 8,
       itemBuilder: (context , index){
-        return const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 4.0),
-          child: CustomListItem(),
-        );
+        return const CustomListItem();
       },
     );
   }

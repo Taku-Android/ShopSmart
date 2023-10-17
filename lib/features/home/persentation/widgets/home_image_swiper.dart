@@ -21,7 +21,7 @@ class _HomeImageSwiperState extends State<HomeImageSwiper> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0 , vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0 , vertical: 6),
       child: SizedBox(
         width: double.infinity,
         height: size.height / 4.5,
