@@ -90,6 +90,9 @@ class DialogUtils {
         context: context,
         builder: (context) {
           return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16.0), // Set the border radius
+            ),
             title: Center(
               child: Text(
                 'Choose option',
@@ -101,7 +104,7 @@ class DialogUtils {
                 children: [
                   TextButton.icon(
                     onPressed: onCameraPressed,
-                    icon: const Icon(Icons.camera_alt_outlined, color: Colors.black,),
+                    icon: const Icon(Icons.camera, color: Colors.black,),
                     label: Text(
                       'Camera',
                       style: Styles.text16,

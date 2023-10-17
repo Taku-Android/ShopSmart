@@ -43,9 +43,26 @@ class _RegisterFormState extends State<RegisterForm> {
             child:
                 ImagePickerContainer(pickedImage: pickedImage, function: () {
                   DialogUtils.imagePickerDialog(context: context,
-                      onCameraPressed: (){},
-                      onGalleryPressed: (){},
-                      onRemovePressed: (){});
+                      onCameraPressed: () async {
+                          if(Navigator.canPop(context)){
+                            Navigator.pop(context);
+                          }
+                          await pickImageFromCamera();
+                      },
+                      onGalleryPressed: () async {
+                        if(Navigator.canPop(context)){
+                          Navigator.pop(context);
+                        }
+                        await pickImageFromGallery();
+                      },
+                      onRemovePressed: (){
+                        if(Navigator.canPop(context)){
+                          Navigator.pop(context);
+                        }
+                        setState(() {
+                          pickedImage = null ;
+                        });
+                      });
                 }),
           ),
         ),
@@ -182,4 +199,25 @@ class _RegisterFormState extends State<RegisterForm> {
     }
     return true;
   }
+
+
+  Future<void> pickImageFromCamera() async {
+    final ImagePicker picker = ImagePicker();
+    pickedImage =  await picker.pickImage(source: ImageSource.camera);
+
+    setState(()  {
+    });
+
+  }
+
+  Future<void> pickImageFromGallery() async {
+    final ImagePicker picker = ImagePicker();
+    pickedImage =  await picker.pickImage(source: ImageSource.gallery);
+
+    setState(()  {
+    });
+
+  }
+
+
 }

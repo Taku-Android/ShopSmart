@@ -35,6 +35,8 @@ class ImagePickerContainer extends StatelessWidget {
                   : Image.file(
                       File(pickedImage!.path),
                       fit: BoxFit.fill,
+                      width: 100,
+                height: 200,
                     )),
         ),
         Positioned(
