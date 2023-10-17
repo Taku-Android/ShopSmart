@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:shop_smart/core/utils/app_constants.dart';
+import 'package:shop_smart/features/auth/persentation/widgets/register/register_form.dart';
 
 import '../../../../../core/utils/styles.dart';
 
@@ -48,7 +49,7 @@ class RegisterBody extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-
+            const RegisterForm(),
           ],
         ),
       ),
