@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+typedef Validator = String? Function(String?);
+
 class CustomTextField extends StatelessWidget {
   const CustomTextField(
       {super.key,
@@ -9,8 +11,8 @@ class CustomTextField extends StatelessWidget {
         required this.onShowTap,
         required this.icon,
         required this.isSecure,
-        required this.validate,
-        required this.errMessage, required this.hint});
+        required this.validator,
+        required this.hint});
 
   final TextEditingController controller;
 
@@ -20,20 +22,20 @@ class CustomTextField extends StatelessWidget {
   final void Function(String) onSubmit;
   final void Function() onShowTap;
   final IconData icon;
-  final bool validate;
+  final Validator? validator;
 
-  final String errMessage;
+
   final String hint ;
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       obscureText: isSecure,
+      validator: validator,
       decoration: InputDecoration(
         filled: true,
         hintText: hint,
-        errorText: (!validate) ? errMessage : null,
         enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(width: 1, color: Colors.transparent),
             borderRadius: BorderRadius.circular(12)),
@@ -53,7 +55,7 @@ class CustomTextField extends StatelessWidget {
               child: const Icon(Icons.remove_red_eye_rounded)),
         ),
       ),
-      onSubmitted: onSubmit,
+
     );
   }
 }
