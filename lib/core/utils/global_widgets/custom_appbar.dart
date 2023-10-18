@@ -29,9 +29,12 @@ class CustomAppbar extends StatelessWidget {
                     onTap: () {
                       AppRoutes.router.pop();
                     },
-                    child: const Icon(
-                      Icons.arrow_back_ios_new,
-                      size: 15,
+                    child: const Padding(
+                      padding: EdgeInsets.all(12.0),
+                      child: Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 15,
+                      ),
                     ))
                 : Image.asset(
                     ImagePath.shopping_cart,

@@ -22,7 +22,7 @@ class ProfileGeneral extends StatelessWidget {
             height: 12,
           ),
           GeneralCustomList(title: 'All Order', image: ImagePath.order_svg, onTap: (){
-
+            AppRoutes.router.push(AppRoutes.kOrdersScreen);
           }, ),
           GeneralCustomList(title: 'Wishlist', image: ImagePath.wishlist_svg, onTap: (){
             AppRoutes.router.push(AppRoutes.kWishScreen);
