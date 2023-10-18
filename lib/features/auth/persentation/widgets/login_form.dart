@@ -35,8 +35,12 @@ class _LoginFormState extends State<LoginForm> {
             onShowTap: () {},
             icon: IconlyLight.message,
             isSecure: false,
-            validate: (submit) ? emailValidate() : true,
-            errMessage: 'Invalid Email..',
+            validator: (text) {
+              if (emailController.text.trim().isEmpty) {
+                return 'Please enter your email..';
+              }
+              return null;
+            },
           ),
           const SizedBox(
             height: 16,
@@ -44,13 +48,7 @@ class _LoginFormState extends State<LoginForm> {
           CustomTextField(
             hint: 'Password',
             controller: passController,
-            onSubmit: (value) {
-              if (!submit) {
-                setState(() {
-                  submit = true;
-                });
-              }
-            },
+            onSubmit: (value) {},
             isPass: true,
             onShowTap: () {
               if (isSecure) {
@@ -65,8 +63,15 @@ class _LoginFormState extends State<LoginForm> {
             },
             icon: IconlyLight.password,
             isSecure: isSecure,
-            validate: (submit) ? passValidate() : true,
-            errMessage: 'Password must be at least 8 character..',
+            validator: (text) {
+              if (passController.text.trim().isEmpty) {
+                return 'Please enter your password..';
+              }
+              if (passController.text.trim().length < 6) {
+                return 'Password at least 6 character..';
+              }
+              return null;
+            },
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -77,14 +82,13 @@ class _LoginFormState extends State<LoginForm> {
                 style: Styles.titleText.copyWith(
                     color: Colors.purple[700],
                     fontStyle: FontStyle.italic,
-                    decoration: TextDecoration.underline ,
-                    fontWeight: FontWeight.w500
-                ),
+                    decoration: TextDecoration.underline,
+                    fontWeight: FontWeight.w500),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 12.0 , bottom: 24),
+            padding: const EdgeInsets.only(top: 12.0, bottom: 24),
             child: CustomButton(
                 onPressed: () {
                   AppRoutes.router.pushReplacement(AppRoutes.kRootScreen);
@@ -117,5 +121,3 @@ class _LoginFormState extends State<LoginForm> {
     return true;
   }
 }
-
-
