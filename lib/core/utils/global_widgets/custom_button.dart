@@ -11,7 +11,7 @@ class CustomButton extends StatelessWidget {
       required this.title,
       this.horizontalPadding,
       required this.textColor,
-      this.borderRadius, this.verticalPadding, this.textSize, this.image});
+      this.borderRadius, this.verticalPadding, this.textSize, this.image,  this.backGroundColor});
 
   final void Function()? onPressed;
   final String title;
@@ -21,6 +21,7 @@ class CustomButton extends StatelessWidget {
   final double? textSize;
   final String? image;
   final Color textColor;
+  final Color? backGroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(
-              (isDark) ? Colors.blue : Colors.blue[50]!),
+              (isDark) ? (backGroundColor == null)?Colors.blue: backGroundColor! : (backGroundColor == null)?Colors.blue[50]! : backGroundColor!),
           // Set the background color
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
