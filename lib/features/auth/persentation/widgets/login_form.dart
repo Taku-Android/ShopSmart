@@ -73,17 +73,22 @@ class _LoginFormState extends State<LoginForm> {
               return null;
             },
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                'Forgot Password ?',
-                style: Styles.titleText.copyWith(
-                    color: Colors.purple[700],
-                    fontStyle: FontStyle.italic,
-                    decoration: TextDecoration.underline,
-                    fontWeight: FontWeight.w500),
+          GestureDetector(
+            onTap: (){
+              AppRoutes.router.push(AppRoutes.kForgetPassword);
+            },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  'Forgot Password ?',
+                  style: Styles.titleText.copyWith(
+                      color: Colors.purple[700],
+                      fontStyle: FontStyle.italic,
+                      decoration: TextDecoration.underline,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
             ),
           ),

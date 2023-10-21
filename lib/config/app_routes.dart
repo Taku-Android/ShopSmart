@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:shop_smart/features/auth/persentation/screens/forget_password_screen.dart';
 import 'package:shop_smart/features/auth/persentation/screens/login_screen.dart';
 import 'package:shop_smart/features/auth/persentation/screens/register_screen.dart';
 import 'package:shop_smart/features/product_detail/presentation/screens/product_detail.dart';
@@ -15,6 +16,7 @@ abstract class AppRoutes {
   static const kViewedRecently = '/viewedRecently';
   static const kLoginScreen = '/';
   static const kRegisterScreen = '/RegisterScreen';
+  static const kForgetPassword = '/ForgetPassword';
 
 
   static final router = GoRouter(routes: [
@@ -61,6 +63,12 @@ abstract class AppRoutes {
       path: kRegisterScreen,
       builder: (context, GoRouterState state) {
         return const RegisterScreen();
+      },
+    ),
+    GoRoute(
+      path: kForgetPassword,
+      builder: (context, GoRouterState state) {
+        return const ForgetPasswordScreen();
       },
     ),
 
