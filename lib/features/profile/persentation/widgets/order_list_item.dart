@@ -56,7 +56,7 @@ class OrderListItem extends StatelessWidget {
               ],
             ),
           ),
-          Spacer(),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.only(right: 4.0),
             child: Align(

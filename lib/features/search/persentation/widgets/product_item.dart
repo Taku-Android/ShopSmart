@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:shop_smart/config/app_routes.dart';
+import 'package:shop_smart/core/utils/global_model/product_model.dart';
 import 'package:shop_smart/core/utils/image_path.dart';
 import 'package:shop_smart/core/utils/theme_cubit/theme_cubit.dart';
 
 import '../../../../core/utils/styles.dart';
 
 class ProductItem extends StatefulWidget {
-  const ProductItem({super.key, required this.height});
+  const ProductItem(
+      {super.key, required this.height, required this.productModel});
 
   final int height;
+  final ProductModel productModel;
 
   @override
   State<ProductItem> createState() => _ProductItemState();
@@ -38,7 +41,7 @@ class _ProductItemState extends State<ProductItem> {
                 fit: BoxFit.fill,
                 width: size.width,
                 height: size.height / widget.height,
-                imageUrl: "https",
+                imageUrl: widget.productModel.productImage??'',
                 placeholder: (context, url) => Image.asset(ImagePath.loading),
                 errorWidget: (context, url, error) =>
                     Image.asset(ImagePath.iphone),
@@ -51,7 +54,7 @@ class _ProductItemState extends State<ProductItem> {
                   SizedBox(
                     width: size.width / 3,
                     child: Text(
-                      'Apple Iphone 14 Pro (128GB) - Black ',
+                      '${widget.productModel.productTitle} ',
                       style: Styles.text16,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -84,7 +87,7 @@ class _ProductItemState extends State<ProductItem> {
               child: Row(
                 children: [
                   Text(
-                    '\$14000',
+                    '${widget.productModel.productPrice}',
                     style: Styles.text18.copyWith(
                       color: Colors.blue,
                     ),

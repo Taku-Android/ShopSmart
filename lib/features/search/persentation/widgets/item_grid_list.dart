@@ -1,5 +1,6 @@
 import 'package:dynamic_height_grid_view/dynamic_height_grid_view.dart';
 import 'package:flutter/material.dart';
+import 'package:shop_smart/core/utils/global_model/product_model.dart';
 import 'package:shop_smart/features/search/persentation/widgets/product_item.dart';
 
 class ItemsGridList extends StatelessWidget {
@@ -8,11 +9,14 @@ class ItemsGridList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DynamicHeightGridView(
-      physics: const BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         builder: (context, index) {
-          return const ProductItem(height: 4,);
+          return ProductItem(
+            height: 4,
+            productModel: ProductModel.localProducts[index],
+          );
         },
-        itemCount: 20,
+        itemCount: ProductModel.localProducts.length,
         crossAxisCount: 2);
   }
 }
